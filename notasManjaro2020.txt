@@ -1,0 +1,88 @@
+*Comando Manjaro 2020
+	[Instalar java]
+ sudo pacman -S jre11-openjdk-headless
+
+	[Instalación LAMPP 2020]
+ sudo pacman -S apache
+ sudo systemctl restart httpd
+ sudo pacman -S mariadb
+ sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+ sudo systemctl  enable mysqld
+ sudo systemctl enable httpd
+ sudo systemctl restart httpd
+ sudo systemctl status httpd
+ sudo mysql_secure_installation
+ sudo systemctl enable mysqld
+ sudo systemctl start mysqld
+ sudo systemctl status mysqld
+ sudo mysql_secure_installation
+ sudo pacman -S php php-apache
+ sudo mousepad /etc/httpd/conf/httpd.conf 
+ cd /
+ cd srv/http/
+ sudo chown -R horusblack .
+ sudo systemctl restart httpd
+ sudo systemctl status httpd
+ sudo mousepad /etc/httpd/conf/httpd.conf
+ sudo systemctl restart httpd
+ sudo pacman -S phpmyadmin
+ sudo mousepad /etc/php/php.ini 
+ sudo mousepad /etc/httpd/conf/extra/phpmyadmin.conf
+ sudo mousepad /etc/httpd/conf/httpd.conf 
+ sudo systemctl restart httpd
+ 	*MAS INFO:https://www.tutofox.com/linux/manjaro-install-apache-mariadb-mysql-php-lamp/
+ 	[AJUSTE ZONA HORARIA]
+ 	*abrir archivo php.ini
+ 	*buscar date.timezone = "";
+ 	*Editar
+ 		date.timezone = "America/Mexico_City";
+	
+	[Instalar yay (para paquetes AUR)]
+sudo pacman -S yay
+	[Instalar programas con yay]
+yay -S [nombre aplicacion aur]
+	[Actualizar programas de AUR]
+yay -Syua
+	*mas comandos https://blog.desdelinux.net/yay-una-excelente-ayudante-para-aur-y-una-alternativa-a-yaourt/
+
+
+	[OPERA]
+sudo pacman -S opera
+*codecs de video para facebook
+sudo pacman -S opera-ffmpeg-codecs
+
+	[LIBREOFFICE]
+ sudo pacman -S libreoffice-fresh libreoffice-fresh-es 
+ sudo pacman -S hunspell-es_es hunspell-es_any
+ sudo pacman -S hyphen hyphen-es
+ sudo pacman -S mythes-es
+ sudo pacman -S languagetool
+ yay -S libreoffice-extension-languagetool languagetool-ngrams-es
+
+	[FUENTES LETRAS]
+ sudo pacman -S ttf-ubuntu-font-family
+ sudo pacman -S adobe-source-code-pro-fonts
+ sudo pacman -S adobe-source-han-sans-jp-fonts
+ sudo pacman -S noto-fonts-emoji
+ sudo pacman -S font-mathematica
+ yay -s ttf-mac-fonts
+ yay -S ttf-ms-fonts
+ sudo pacman -S ttf-fira-code otf-fira-code
+ yay -S ttf-iosevka
+
+	[docky dock]
+	gpg --recv-key 5DECDBA89270E723
+	yay -S docky
+	*REMOVER SOMBRA DEBAJO DOCKY
+	http://tatoconlinux.blogspot.com/2015/03/plank-con-manjaro-xfce-linea-horizontal.html
+
+	[ERROR EN LIBRERIAS PARA ACTUALIZAR.]
+	*Si en algun momento al querer actualizar generar un error "core.db", usar el comando
+		sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
+	*Para actualizar las bibliotecas
+	
+	[TEAMVIEWER]
+	*Se instala mediante AUR
+	Si no conecta, ejecutar el comando
+		sudo teamviewer --daemon enable
+	
