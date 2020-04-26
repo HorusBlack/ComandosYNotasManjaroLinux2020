@@ -30,6 +30,7 @@
  sudo mousepad /etc/httpd/conf/extra/phpmyadmin.conf
  sudo mousepad /etc/httpd/conf/httpd.conf 
  sudo systemctl restart httpd
+ 
  	*MAS INFO:https://www.tutofox.com/linux/manjaro-install-apache-mariadb-mysql-php-lamp/
  	[AJUSTE ZONA HORARIA]
  	*abrir archivo php.ini
@@ -70,19 +71,34 @@ sudo pacman -S opera-ffmpeg-codecs
  sudo pacman -S ttf-fira-code otf-fira-code
  yay -S ttf-iosevka
 
-	[docky dock]
+[DOCKY DOCK]
 	gpg --recv-key 5DECDBA89270E723
 	yay -S docky
 	*REMOVER SOMBRA DEBAJO DOCKY
 	http://tatoconlinux.blogspot.com/2015/03/plank-con-manjaro-xfce-linea-horizontal.html
 
-	[ERROR EN LIBRERIAS PARA ACTUALIZAR.]
+[ERROR EN LIBRERIAS PARA ACTUALIZAR.]
 	*Si en algun momento al querer actualizar generar un error "core.db", usar el comando
 		sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 	*Para actualizar las bibliotecas
 	
-	[TEAMVIEWER]
+[TEAMVIEWER]
 	*Se instala mediante AUR
 	Si no conecta, ejecutar el comando
 		sudo teamviewer --daemon enable
 	
+[INSTALACIÓN DE COMPOSER Y LARAVEL]
+[*INSTALACIÓN DE COMPOSER]
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f5eff0d4b4e4c79ff1609dd1e613307e16318854d24ae64f26d17af3ef0bf7cfb710ca74755a') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+   php composer-setup.php
+   php -r "unlink('composer-setup.php');"
+   curl -s https://getcomposer.org/installer | php
+[**CONFIGURACIÓN DEL PATH]
+   mv composer.phar /usr/local/bin/composer
+   sudo mv composer.phar /usr/local/bin/composer
+   ./composer
+[**INSTALACIÓN E INICIALIZACIÓN DE LARAVEL]
+   composer create-project laravel/laravel  --prefer-dist firstapp
+
+
