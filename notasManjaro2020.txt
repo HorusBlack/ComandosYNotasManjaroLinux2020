@@ -98,7 +98,7 @@ sudo pacman -S opera-ffmpeg-codecs
    mv composer.phar /usr/local/bin/composer
    sudo mv composer.phar /usr/local/bin/composer
    ./composer
-[**INSTALACIÓN E INICIALIZACIÓN DE LARAVEL]
-   composer create-project laravel/laravel  --prefer-dist firstapp
+[**INSTALACIÓN E INICIALIZACIÓN DE PROYECTO LARAVEL MEDIANTE COMPOSER]
+composer create-project laravel/laravel  --prefer-dist nameMyProject
 
 
