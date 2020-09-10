@@ -101,4 +101,11 @@ sudo pacman -S opera-ffmpeg-codecs
 [**INSTALACIÓN E INICIALIZACIÓN DE PROYECTO LARAVEL MEDIANTE COMPOSER]
 composer create-project laravel/laravel  --prefer-dist nameMyProject
 
-
+//Para respaldos automaticos de base de datos (en windows). Generar un archivo .bat con la siguiente linea:
+	echo off
+	C:\laragon\bin\mysql\mysql-5.7.24-winx64\bin\mysqldump -hlocalhost -uroot pruebas > C:\Users\Horus\Desktop\Respaldos\dataBaseBackup_%Date:~6,4%%Date:~3,2%%Date:~0,2%.sql
+	exit
+//sustituir, la ruta donde se encuentra el archivo "bin" de mysqldump (segùn el servidor que se tenga instalado), y la ruta donde se va a guardar el archivo generado.
+//igualmente, cambiar los datos de -h -u y -p y el nombre de la base de datos segun sea el caso. Si el usuario seleccionado NO  tiene CONTRASEÑA, entonces quitar -p
+//El archivo debe ser ejecutado como administrador.
+//para mas detalles:https://www.oscarperez.es/backups-automaticos-de-tus-bases-de-datos-mysql/
